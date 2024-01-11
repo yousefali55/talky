@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:talky/theming/colors.dart';
 
-class TalkyTextInSignin extends StatelessWidget {
-  const TalkyTextInSignin({
+class TalkyTextInSignIn extends StatelessWidget {
+  const TalkyTextInSignIn({
     super.key,
   });
 

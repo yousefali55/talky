@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:talky/theming/colors.dart';
-import 'package:talky/widgets/talky_text_in_signIn.dart';
+import 'package:talky/widgets/talky_text_in_signin.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -10,7 +8,7 @@ class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const TalkyTextInSignin(),
+        const TalkyTextInSignIn(),
         
       ],
     );
