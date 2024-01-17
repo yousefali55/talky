@@ -5,22 +5,20 @@ import 'package:talky/theming/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ButtonAuthntication extends StatelessWidget {
-  final String signinWith;
+  final String s;
   final String svg;
   final void Function() onPressed;
   const ButtonAuthntication(
-      {super.key,
-      required this.signinWith,
-      required this.svg,
-      required this.onPressed});
+      {super.key, required this.s, required this.svg, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
+    String signinWith = 'Sign in with $s';
     return ElevatedButton.icon(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(ColorsManager.white),
-        maximumSize: MaterialStateProperty.all(
-          Size(319.w, 60.h),
+        foregroundColor: MaterialStateProperty.all(Colors.white),
+        minimumSize: MaterialStateProperty.all(
+          Size(319.w, 70.h)
         ),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(

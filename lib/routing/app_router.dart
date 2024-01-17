@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:talky/routing/routes.dart';
 import 'package:talky/views/sign_in_email/ui/sign_in_email.dart';
 import 'package:talky/views/sign_up_email/sign_up_email.dart';
+import 'package:talky/views/signin/cubits/google/google_sign_in_cubit.dart';
 import 'package:talky/views/signin/ui/sign_in.dart';
 
 class AppRouter {
@@ -9,7 +11,10 @@ class AppRouter {
     switch (settings.name) {
       case Routes.signIn:
         return MaterialPageRoute(
-          builder: (_) => const SignIn(),
+          builder: (_) =>  BlocProvider(
+            create: (context) => GoogleSignInCubit(),
+            child: const SignIn(),
+          ),
         );
       case Routes.signUpEmail:
         return MaterialPageRoute(

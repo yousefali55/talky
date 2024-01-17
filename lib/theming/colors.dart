@@ -5,4 +5,6 @@ class ColorsManager{
   static const Color navyBlue = Color(0xFF243443);
   static const Color primaryColor = Color(0xFFE5E5E5);
   static const Color white = Color(0xFFFFFFFF);
+  static const Color darkGrey = Color(0xFF58616A);
+  
 }

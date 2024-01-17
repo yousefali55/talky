@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:talky/routing/app_router.dart';
 import 'package:talky/routing/routes.dart';
 import 'package:talky/theming/colors.dart';
+import 'package:talky/views/signin/cubits/google/google_sign_in_cubit.dart';
 
 class TalkyApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -12,11 +14,14 @@ class TalkyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        initialRoute: Routes.signIn,
-        onGenerateRoute: appRouter.generateRoute,
-        theme: ThemeData(scaffoldBackgroundColor: ColorsManager.primaryColor),
+      child: BlocProvider(
+        create: (context) => GoogleSignInCubit(),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          initialRoute: Routes.signIn,
+          onGenerateRoute: appRouter.generateRoute,
+          theme: ThemeData(scaffoldBackgroundColor: ColorsManager.white),
+        ),
       ),
     );
   }
