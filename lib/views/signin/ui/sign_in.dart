@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:talky/routing/routes.dart';
 import 'package:talky/spacing/spacing.dart';
 import 'package:talky/theming/colors.dart';
 import 'package:talky/views/signin/cubits/google/google_sign_in_cubit.dart';
@@ -20,7 +21,9 @@ class SignIn extends StatelessWidget {
           child: Column(
             children: [
               heightSpace(71),
-              const TalkyTextInSignIn(),
+              const TalkyTextInSignIn(
+                fontSize: 70,
+              ),
               heightSpace(78),
               BlocBuilder<GoogleSignInCubit, GoogleSignInState>(
                 builder: (context, state) {
@@ -69,7 +72,9 @@ class SignIn extends StatelessWidget {
               ButtonAuthntication(
                 s: 'Email',
                 svg: 'assets/svgs/email.svg',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.signInEmail);
+                },
               ),
               heightSpace(30),
               AlreadyHaveAndSignUp(onPressed: () {

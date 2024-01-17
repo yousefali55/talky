@@ -3,8 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:talky/theming/colors.dart';
 
 class TalkyTextInSignIn extends StatelessWidget {
+  final double fontSize;
   const TalkyTextInSignIn({
-    super.key,
+    super.key, required this.fontSize,
   });
 
   @override
@@ -14,7 +15,7 @@ class TalkyTextInSignIn extends StatelessWidget {
         style: GoogleFonts.inter(
           color: ColorsManager.navyBlue,
           fontWeight: FontWeight.w700,
-          fontSize: 70,
+          fontSize: fontSize,
         ),
         children: const [
           TextSpan(
