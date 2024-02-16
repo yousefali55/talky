@@ -78,7 +78,7 @@ class SignIn extends StatelessWidget {
               ),
               heightSpace(30),
               AlreadyHaveAndSignUp(onPressed: () {
-                // Navigator.pushNamed(contex);
+                Navigator.pushNamed(context, Routes.signUpEmail);
               }),
             ],
           ),
